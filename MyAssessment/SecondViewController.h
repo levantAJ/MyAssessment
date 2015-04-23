@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol SecondViewControllerDelegate;
+
 @interface SecondViewController : UIViewController
+
+@property (nonatomic, weak) id<SecondViewControllerDelegate> delegate;
+
+@end
+
+@protocol SecondViewControllerDelegate <NSObject>
+
+@optional
+- (void)secondViewControllerDidDismissWithData:(NSObject *)data;
 
 @end
